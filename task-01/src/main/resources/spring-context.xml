@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="fileName" class="java.lang.String">
+        <constructor-arg value="data.csv"/>
+    </bean>
+
+    <bean id="quizParser" class="ru.diasoft.ncheranev.otus.service.QuizLoaderFromResource">
+        <constructor-arg index="0" ref="fileName"/>
+    </bean>
+
+    <bean id="questionFormatter" class="ru.diasoft.ncheranev.otus.service.QuestionFormatterText"/>
+
+    <bean id="quizShow" class="ru.diasoft.ncheranev.otus.service.QuizShowImpl">
+        <constructor-arg index="0" ref="questionFormatter"/>
+    </bean>
+
+    <bean id="quizRunner" class="ru.diasoft.ncheranev.otus.service.QuizRunnerImpl">
+        <constructor-arg index="0" ref="quizParser"/>
+        <constructor-arg index="1" ref="quizShow"/>
+    </bean>
+
+</beans>
