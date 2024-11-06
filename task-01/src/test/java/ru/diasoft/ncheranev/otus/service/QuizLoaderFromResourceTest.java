@@ -14,6 +14,6 @@ class QuizLoaderFromResourceTest {
         var result = loaderStub.load();
 
         // then
-        assertThat(result.getQuestions().size()).isEqualTo(2);
+        assertThat(result.getQuestions().size()).isEqualTo(5);
     }
 }
