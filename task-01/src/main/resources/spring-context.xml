@@ -12,7 +12,7 @@
         <constructor-arg index="0" ref="fileName"/>
     </bean>
 
-    <bean id="questionFormatter" class="ru.diasoft.ncheranev.otus.service.QuestionFormatterText"/>
+    <bean id="questionFormatter" class="ru.diasoft.ncheranev.otus.service.TextQuestionFormatter"/>
 
     <bean id="quizShow" class="ru.diasoft.ncheranev.otus.service.QuizShowImpl">
         <constructor-arg index="0" ref="questionFormatter"/>
